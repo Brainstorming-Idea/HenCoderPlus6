@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context="com.example.app.MainActivity">
+    android:padding="16dp">
 
 
     <LinearLayout
@@ -55,15 +54,15 @@
 
         <EditText
             android:id="@+id/et_code"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <com.example.app.widget.CodeView
             android:id="@+id/code_view"
-            android:layout_margin="8dp"
             android:layout_width="80dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_margin="8dp" />
     </LinearLayout>
 
 
