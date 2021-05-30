@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     override fun onClick(v: View?) {
         if (v is CodeView){
             var codeView = v
+            codeView.updateCode()
         }else if (v is Button){
             login()
         }

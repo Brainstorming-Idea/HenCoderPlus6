@@ -50,7 +50,7 @@ class CodeView : AppCompatTextView {
             "tcp/ip"
     )
 
-    private fun updateCode() {
+    fun updateCode() {
         val random = Random().nextInt(codeList.size)
         val code = codeList[random]
         text = code
