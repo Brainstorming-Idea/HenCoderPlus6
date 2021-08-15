@@ -7,7 +7,6 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
-import androidx.core.graphics.red
 
 /**
  * @author wangyou
@@ -16,8 +15,8 @@ import androidx.core.graphics.red
  */
 var radius = 100.px
 class TestView(context: Context?, attr:AttributeSet?) : View(context, attr) {
-    var paint = Paint(Paint.ANTI_ALIAS_FLAG)//抗锯齿
-    var path = Path()
+    private var paint = Paint(Paint.ANTI_ALIAS_FLAG)//抗锯齿
+    private var path = Path()
     /*view尺寸改变的时候回调*/
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -25,7 +24,7 @@ class TestView(context: Context?, attr:AttributeSet?) : View(context, attr) {
         path.reset()//
         path.addRect(width/2f - radius, height/2f - radius, width/2f + radius, height/2f + radius,Path.Direction.CW)
         path.addCircle(width/2f, height/2f, radius, Path.Direction.CW)
-        path.fillType = Path.FillType.INVERSE_EVEN_ODD//镂空
+        path.fillType = Path.FillType.EVEN_ODD//镂空
     }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
